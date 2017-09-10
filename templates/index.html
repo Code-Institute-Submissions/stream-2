@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Restaurant Dashboard</title>
+
+<!-- Stylesheets -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/bootstrap.css')}}">
+<link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/dc.css')}}">
+<link rel="stylesheet" href="{{url_for ('static', filename='lib/css/introjs.css')}}" />
+<link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/style.css')}}">
+<!-- /Stylesheets -->
+
+</head>
+
+<body class="application">
+
+  {% include 'header.html' %}
+
+  <!-- Main container -->
+  <main class="container-fluid">
+
+    <!-- Totals -->
+    <section class="row totals">
+
+      <!-- Total income -->
+      <div class="col-md-4" 
+      data-step="1" 
+      data-intro="Total income" 
+      style="font-weight: normal" 
+      data-position="right">
+        <div class="totals__item">
+          <i class="fa fa-university" aria-hidden="true"></i>
+          Total income <span id="total"></span></div>
+      </div>
+      <!-- /Total income -->
+
+      <!-- Total tips -->
+      <div class="col-md-4"      
+      data-step="2" 
+      data-intro="Total tips" 
+      style="font-weight: normal" 
+      data-position="right">
+        <div class="totals__item">
+            <i class="fa fa-money" aria-hidden="true"></i>
+            Total tips<span id="total-tips"></span></div>
+      </div>
+      <!-- /Total tips-->
+
+      <!-- Total customers -->
+      <div class="col-md-4"
+      data-step="3" 
+      data-intro="Total customers" 
+      style="font-weight: normal" 
+      data-position="right">
+        <div class="totals__item">
+            <i class="fa fa-users" aria-hidden="true"></i>
+            Total customers<span id="total-customers"></span></div>
+      </div>
+      <!-- /Total customers -->
+
+    </section>
+    <!-- /Totals -->
+
+    <!-- Main Dashboard -->
+    <div class="row">
+
+      <!-- Pie chart -->
+      <div class="col-md-4"
+      data-step="4" 
+      data-intro="Number of customers per transaction" 
+      style="font-weight: normal" 
+      data-position="right">
+        <div class="dashboard-item">
+          <h3>Quantity</h3>
+          <div id="pie-chart" class="chart-item"></div>
+        </div>
+      </div>
+      <!-- /Pie chart -->
+    
+      <!-- Row chart -->
+      <div class="col-md-4"
+      data-step="5" 
+      data-intro="Customer payment type" 
+      style="font-weight: normal" 
+      data-position="right">
+          <div class="dashboard-item">
+            <h3>Type</h3>
+            <div id="row-chart" class="chart-item"></div>
+          </div>
+      </div>
+      <!-- /Row chart -->
+
+      <!-- Bubble chart-->
+      <div class="col-md-4"
+      data-step="6" 
+      data-intro="Spend over time" 
+      style="font-weight: normal" 
+      data-position="right">
+          <div class="dashboard-item">
+            <h3>Spend over time</h3>
+            <div id="line-chart" class="chart-item"></div>
+          </div>
+      </div>
+      <!-- Bubble chart-->
+
+    </div>
+    <!-- /Main Dashboard -->
+    
+    <!-- Data table -->
+    <div class="row">
+      <div class="col-md-12 data-table"
+      data-step="7" 
+      data-intro="Table containg all transaction data" 
+      style="font-weight: normal" 
+      data-position="right">
+        <h3>Transactions</h3>
+        <!-- Table -->
+        <table id="data-table" class="table table-hover"></table>
+        <!-- /Table -->
+      </div>
+    </div>
+    <!-- /Data table -->
+
+  </main>
+  <!-- /Main container -->
+
+  {% include 'footer.html' %}
+
+  <!-- Scripts -->
+  <script src="{{ url_for ('static', filename='lib/js/crossfilter.js')}}"></script>
+  <script src="{{ url_for ('static', filename='lib/js/d3.js')}}"></script>
+  <script src="{{ url_for ('static', filename='lib/js/dc.js')}}"></script>
+  <script src="{{ url_for ('static', filename='lib/js/queue.js')}}"></script>
+  <script src="{{url_for ('static', filename='lib/js/intro.js')}}" type="text/javascript"></script>
+  <script src="{{ url_for ('static', filename='lib/js/app.js')}}"></script> 
+  <!-- /Scripts -->
+
+</body>
+</html>
