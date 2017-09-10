@@ -59,7 +59,7 @@ header a:hover{
 }
 
 .totals{
-    margin-bottom:35px;
+    margin-bottom:40px;
 }
 
 .totals__item{
@@ -67,7 +67,6 @@ header a:hover{
     color:#ffffff;
     display:inline-block;
     padding:20px 40px;
-    margin-bottom: 5px;
     width:100%;
 }
 
@@ -93,10 +92,12 @@ header a:hover{
     font-size: 18px;
     line-height: 1.2;
     padding: 15px 20px;
+    margin-bottom:0px;
     width: 100%;
 }
 
 .chart-item{
+    padding: 20px 0;
     width: 100%;
     height: 100%;
 }
@@ -132,4 +133,37 @@ footer{
     border-top: 1px solid rgb(237, 237, 237);
     font-size: 12px;
     padding: 24px 50px;
+}
+
+@media screen and (max-width: 767px) {
+    .container-fluid{
+        margin-top: 20px;
+    }
+
+    .totals {
+        margin-bottom: 0px;
+    }
+
+    .totals__item {
+        margin-bottom: 20px;
+    }
+
+    .dashboard-item{
+        margin-bottom:20px;
+    }
+
+    .data-table{
+        margin: 0px;
+    }
+
+    footer{
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    header h1{
+        font-size: 16px;
+        padding-top: 18px;
+    }
 }
